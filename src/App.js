@@ -1,5 +1,6 @@
 import "./App.css";
 import "./normalize.css";
+import CardPreview from "./components/CardPreview";
 
 function App() {
   return (
@@ -14,22 +15,9 @@ function App() {
         <main>
           <h3>Your Cards</h3>
           <div className="gridContainer">
-            <div className="tile">
-              <h4 className="cardTerm">Term goes here</h4>
-              <div className="cardButtons">
-                <button type="button" className="tertiary">
-                  show back
-                </button>
-                <div>
-                  <button type="button" className="secondary">
-                    edit
-                  </button>
-                  <button type="button" className="secondary danger">
-                    delete
-                  </button>
-                </div>
-              </div>
-            </div>
+            <CardPreview term="What does a duck say?" />
+            <CardPreview term="What does a dog say?" />
+            <CardPreview term="What does a cow say?" />
           </div>
         </main>
       </div>
