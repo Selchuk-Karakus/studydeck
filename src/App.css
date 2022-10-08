@@ -43,3 +43,71 @@ main h3 {
   grid-auto-rows: 1fr;
   margin-top: 8px;
 }
+
+.tile {
+  border-style: solid;
+  background-color: #f7fafc;
+  border-color: #edf2f7;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.tile.back {
+  background-color: #ebf4ff;
+}
+
+h4 {
+  font-weight: 700;
+  color: #2a4365;
+  font-size: 1.25rem;
+}
+
+h4.cardTerm {
+  margin-top: 1rem;
+  text-align: center;
+  color: #2c5282;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.cardButtons {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.25rem;
+}
+
+button.primary {
+  background-color: #2b6cb0;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #fff;
+}
+
+button.secondary {
+  font-weight: 500;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #2b6cb0;
+  text-decoration: underline;
+}
+
+button.tertiary {
+  font-weight: 500;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #4a5568;
+  text-decoration: underline;
+}
+
+button.danger {
+  color: #c53030;
+}
