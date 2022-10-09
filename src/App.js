@@ -7,7 +7,7 @@ function App() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    fetch("https://atom-splendid-macadamia.glitch.me/api/card", {
+    fetch(`/api/card`, {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

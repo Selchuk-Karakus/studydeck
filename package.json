@@ -34,5 +34,6 @@
   },
   "devDependencies": {
     "web-vitals": "^3.0.3"
-  }
+  },
+  "proxy": "https://atom-splendid-macadamia.glitch.me"
 }
