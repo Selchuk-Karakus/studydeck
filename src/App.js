@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./normalize.css";
 import CardPreview from "./components/CardPreview";
 
 function App() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    fetch("https://atom-splendid-macadamia.glitch.me/api/card", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then(setCards);
+  }, []);
+
   return (
     <div>
       <div>
