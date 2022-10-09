@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import "./normalize.css";
 import CardPreview from "./components/CardPreview";
@@ -15,9 +16,9 @@ function App() {
         <main>
           <h3>Your Cards</h3>
           <div className="gridContainer">
-            <CardPreview definition = "quack" term="What does a duck say?" />
-            <CardPreview definition = "whoof" term="What does a dog say?" />
-            <CardPreview definition = "moooo" term="What does a cow say?" />
+            <CardPreview definition="quack" term="What does a duck say?" />
+            <CardPreview definition="whoof" term="What does a dog say?" />
+            <CardPreview definition="moooo" term="What does a cow say?" />
           </div>
         </main>
       </div>
