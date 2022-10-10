@@ -1,4 +1,4 @@
-const getCards = () => {
+export const getCards = () => {
   return fetch(`/api/card`, {
     headers: {
       "Content-Type": "application/json",
@@ -7,4 +7,8 @@ const getCards = () => {
   }).then((res) => res.json());
 };
 
-export default getCards;
+export const destroyCard = (id) => {
+  return fetch(`/api/card/${id}`, {
+    method: "DELETE",
+  });
+};

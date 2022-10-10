@@ -2,7 +2,7 @@ import React from "react";
 import { render, act } from "@testing-library/react";
 import App from "../App";
 import mockCards from "./mocks/MockResponse";
-import getCards from "../service/cardService";
+import { getCards } from "../service/cardService";
 
 jest.mock("../service/cardService");
 describe("should render App component", () => {

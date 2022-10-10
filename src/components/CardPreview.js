@@ -1,11 +1,25 @@
 import React from "react";
 import { useState } from "react";
+import { destroyCard } from "../service/cardService";
 
 const CardPreview = (props) => {
   const [isFront, setIsFront] = useState(true);
 
   const handleCardFlip = () => {
     setIsFront((currentStateValue) => !currentStateValue);
+  };
+
+  const handleDelete = () => {
+    const confirm = window.confirm(
+      `Are you sure you wish to delete "${props.term}"?`
+    );
+    if (confirm) {
+      destroyCard(props.id).then(() => {
+        props.onRemove &&
+          typeof props.onRemove === "function" &&
+          props.onRemove(props.id);
+      });
+    }
   };
 
   return (
@@ -19,7 +33,11 @@ const CardPreview = (props) => {
           <button type="button" className="secondary">
             edit
           </button>
-          <button type="button" className="secondary danger">
+          <button
+            type="button"
+            className="secondary danger"
+            onClick={handleDelete}
+          >
             delete
           </button>
         </div>
