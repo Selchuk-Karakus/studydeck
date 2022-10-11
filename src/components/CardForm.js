@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { saveCard } from "../service/cardService";
 
 const CardForm = (props) => {
   const [term, setTerm] = useState("");
   const [definition, setDefinition] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    saveCard({ term, definition }).then((card) => {
+      clearForm();
+      props.onSave && typeof props.onSave === "function" && props.onSave(card);
+    });
+  };
 
   const handleTermChange = (event) => {
     const { value } = event.target;
@@ -21,7 +30,7 @@ const CardForm = (props) => {
 
   return (
     <div className="tile">
-      <form onReset={clearForm}>
+      <form onReset={clearForm} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="card-term">TERM</label>
           <textarea

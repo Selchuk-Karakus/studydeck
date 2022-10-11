@@ -16,6 +16,10 @@ function App() {
     setCards((existingCards) => existingCards.filter((card) => card.id !== id));
   };
 
+  const handleAdd = (card) => {
+    setCards((existingCards) => [...existingCards, card]);
+  };
+
   return (
     <div>
       <div>
@@ -28,7 +32,7 @@ function App() {
         <main>
           <h3>Your Cards</h3>
           <div className="gridContainer">
-            <CardForm/>
+            <CardForm onSave={handleAdd} />
             {cards.map(({ id, term, definition }) => (
               <CardPreview
                 key={id}

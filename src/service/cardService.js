@@ -12,3 +12,13 @@ export const destroyCard = (id) => {
     method: "DELETE",
   });
 };
+
+export const saveCard = (card) => {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(card),
+  };
+
+  return fetch(`api/card`, requestOptions).then((res) => res.json());
+};
