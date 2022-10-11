@@ -3,6 +3,7 @@ import "./App.css";
 import "./normalize.css";
 import CardPreview from "./components/CardPreview";
 import { getCards } from "./service/cardService";
+import CardForm from "./components/CardForm";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -27,6 +28,7 @@ function App() {
         <main>
           <h3>Your Cards</h3>
           <div className="gridContainer">
+            <CardForm/>
             {cards.map(({ id, term, definition }) => (
               <CardPreview
                 key={id}
