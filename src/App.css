@@ -111,3 +111,38 @@ button.tertiary {
 button.danger {
   color: #c53030;
 }
+
+form div {
+  border-color: #e2e8f0;
+  margin-top: 0.5rem;
+}
+
+form label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  color: #2c5282;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+form label .errorMessage {
+  font-size: 0.15rem;
+  text-transform: none;
+  color: #c53030;
+}
+
+textarea {
+  border-radius: 0.25rem;
+  border-width: 1px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+form div.buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
