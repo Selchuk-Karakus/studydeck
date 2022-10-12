@@ -5,7 +5,7 @@ import CardPreview from "./components/CardPreview";
 import { getCards } from "./service/cardService";
 import CardForm from "./components/CardForm";
 
-const App  = () => {
+const App = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -18,6 +18,14 @@ const App  = () => {
 
   const handleAdd = (card) => {
     setCards((existingCards) => [...existingCards, card]);
+  };
+
+  const handleUpdate = (card) => {
+    setCards((existingCards) =>
+      existingCards.map((existingCard) => {
+        return existingCard.id === card.id ? card : existingCard;
+      })
+    );
   };
 
   return (
@@ -34,13 +42,18 @@ const App  = () => {
           <div className="gridContainer">
             <CardForm onSave={handleAdd} />
             {cards.map((card) => (
-              <CardPreview key={card.id} onRemove={handleRemove} {...card} />
+              <CardPreview
+                key={card.id}
+                onRemove={handleRemove}
+                {...card}
+                onUpdate={handleUpdate}
+              />
             ))}
           </div>
         </main>
       </div>
     </div>
   );
-}
+};
 
 export default App;

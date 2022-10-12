@@ -14,11 +14,25 @@ export const destroyCard = (id) => {
 };
 
 export const saveCard = (card) => {
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(card),
-  };
+  return card.id ? updateCard(card) : createCard(card);
+};
 
-  return fetch(`api/card`, requestOptions).then((res) => res.json());
+export const createCard = (card) => {
+  return fetch(`/api/card`, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(card),
+  }).then((res) => res.json());
+};
+
+export const updateCard = (card) => {
+  return fetch(`/api/card/${card.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify(card),
+  }).then((res) => res.json());
 };

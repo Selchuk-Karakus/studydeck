@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { destroyCard } from "../service/cardService";
 import CardForm from "./CardForm";
 
-const CardPreview = ({ onRemove, ...card }) => {
+const CardPreview = ({ onRemove, onUpdate, ...card }) => {
   const [isEditMode, setIsEditMode] = useState(false);
 
   const handleToggleEdit = () => {
@@ -10,7 +10,7 @@ const CardPreview = ({ onRemove, ...card }) => {
   };
 
   return isEditMode ? (
-    <CardForm onCancel={handleToggleEdit} />
+    <CardForm onCancel={handleToggleEdit} card={card} onSave={onUpdate} />
   ) : (
     <View {...card} onRemove={onRemove} onEdit={handleToggleEdit} />
   );
