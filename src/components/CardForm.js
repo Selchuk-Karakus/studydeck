@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { saveCard } from "../service/cardService";
 
-const CardForm = ({ onSave }) => {
+const CardForm = ({ onSave, onCancel }) => {
   const [term, setTerm] = useState("");
   const [definition, setDefinition] = useState("");
 
@@ -26,6 +26,7 @@ const CardForm = ({ onSave }) => {
   const clearForm = () => {
     setTerm("");
     setDefinition("");
+    onCancel && typeof onCancel === "function" && onCancel();
   };
 
   return (

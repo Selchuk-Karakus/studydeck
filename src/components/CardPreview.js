@@ -1,8 +1,22 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { destroyCard } from "../service/cardService";
+import CardForm from "./CardForm";
 
-const CardPreview = ({ id, term, definition, onRemove }) => {
+const CardPreview = ({ onRemove, ...card }) => {
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const handleToggleEdit = () => {
+    setIsEditMode((currentModeVal) => !currentModeVal);
+  };
+
+  return isEditMode ? (
+    <CardForm onCancel={handleToggleEdit} />
+  ) : (
+    <View {...card} onRemove={onRemove} onEdit={handleToggleEdit} />
+  );
+};
+
+const View = ({ id, term, definition, onRemove, onEdit }) => {
   const [isFront, setIsFront] = useState(true);
 
   const handleCardFlip = () => {
@@ -28,7 +42,7 @@ const CardPreview = ({ id, term, definition, onRemove }) => {
           {isFront ? "show back" : "show front"}
         </button>
         <div>
-          <button type="button" className="secondary">
+          <button type="button" className="secondary" onClick={onEdit}>
             edit
           </button>
           <button
