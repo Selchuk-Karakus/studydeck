@@ -5,7 +5,7 @@ import CardPreview from "./components/CardPreview";
 import { getCards } from "./service/cardService";
 import CardForm from "./components/CardForm";
 
-function App() {
+const App  = () => {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -33,14 +33,8 @@ function App() {
           <h3>Your Cards</h3>
           <div className="gridContainer">
             <CardForm onSave={handleAdd} />
-            {cards.map(({ id, term, definition }) => (
-              <CardPreview
-                key={id}
-                term={term}
-                definition={definition}
-                id={id}
-                onRemove={handleRemove}
-              />
+            {cards.map((card) => (
+              <CardPreview key={card.id} onRemove={handleRemove} {...card} />
             ))}
           </div>
         </main>
