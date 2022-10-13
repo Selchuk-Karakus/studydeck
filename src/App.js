@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "./normalize.css";
-import CardPreview from "./components/CardPreview";
 import { getCards } from "./service/cardService";
-import CardForm from "./components/CardForm";
+import CardList from "./components/CardList";
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -38,18 +37,12 @@ const App = () => {
           <h2>Retention through repitition</h2>
         </header>
         <main>
-          <h3>Your Cards</h3>
-          <div className="gridContainer">
-            <CardForm onSave={handleAdd} />
-            {cards.map((card) => (
-              <CardPreview
-                key={card.id}
-                onRemove={handleRemove}
-                {...card}
-                onUpdate={handleUpdate}
-              />
-            ))}
-          </div>
+          <CardList
+            cards={cards}
+            onAdd={handleAdd}
+            onUpdate={handleUpdate}
+            onRemove={handleRemove}
+          />
         </main>
       </div>
     </div>
