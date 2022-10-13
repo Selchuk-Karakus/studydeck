@@ -35,18 +35,20 @@ const CardForm = ({ onSave, onCancel, card }) => {
       <h4>{id ? "Update Card" : "Add Card"}</h4>
       <form onReset={clearForm} onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="card-term">TERM</label>
+          <label htmlFor={`card-term ${id ? id : "new"}`}>TERM</label>
           <textarea
-            id="card-term"
+            id={`card-term ${id ? id : "new"}`}
             value={term}
             onChange={handleTermChange}
           ></textarea>
         </div>
 
         <div>
-          <label htmlFor="card-definition">DEFINITION</label>
+          <label htmlFor={`card-definition ${id ? id : "new"}`}>
+            DEFINITION
+          </label>
           <textarea
-            id="card-definition"
+            id={`card-definition ${id ? id : "new"}`}
             value={definition}
             onChange={handleDefinitionChange}
           ></textarea>
