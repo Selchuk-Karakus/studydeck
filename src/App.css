@@ -146,3 +146,90 @@ form div.buttons {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+
+.practiceCTA {
+  margin-top: 0.5rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.practiceCTA a {
+  background-color: #2f855a;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  color: #fff;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+}
+
+.practiceContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.practiceContainer a {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: #2b6cb0;
+  text-decoration: underline;
+}
+
+.practiceContainer a > svg {
+  vertical-align: middle;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  fill: currentColor;
+  width: 1.5rem;
+}
+
+.progress {
+  font-weight: 500;
+  text-align: center;
+  color: #718096;
+  font-size: 1.5rem;
+}
+
+.card {
+  border-radius: 0.25rem;
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60vh;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.practiceTerm {
+  font-weight: 700;
+  text-align: center;
+  color: #2c5282;
+  font-size: 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+.practiceButtons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
