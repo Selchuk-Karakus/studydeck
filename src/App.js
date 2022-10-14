@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Router } from "@reach/router";
 import "./App.css";
 import "./normalize.css";
 import { getCards } from "./service/cardService";
 import CardList from "./components/CardList";
+import Practice from "./components/Practice";
 
 const App = () => {
   const [cards, setCards] = useState([]);
@@ -37,12 +39,16 @@ const App = () => {
           <h2>Retention through repitition</h2>
         </header>
         <main>
-          <CardList
-            cards={cards}
-            onAdd={handleAdd}
-            onUpdate={handleUpdate}
-            onRemove={handleRemove}
-          />
+          <Router>
+            <CardList
+              path="/"
+              cards={cards}
+              onAdd={handleAdd}
+              onUpdate={handleUpdate}
+              onRemove={handleRemove}
+            />
+            <Practice path="practice" />
+          </Router>
         </main>
       </div>
     </div>
