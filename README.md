@@ -8,19 +8,19 @@ This project focuses on utilizing React hooks, reusable components, and passing 
 
 ## Technical
 
-Created using React
-Features a mock back-end API
-Utilizes Normalize for styles
-Feel free to use this URL "https://atom-splendid-macadamia.glitch.me" which provides the data I created for our REST endpoint API for building this flashcard application.
+- Created using React
+- Features a mock back-end API
+- Utilizes Normalize for styles
+- Feel free to use this URL "https://atom-splendid-macadamia.glitch.me" which provides the data I created for our REST endpoint API for building this flashcard application.
 
 ## Installation Instructions
 
-# ensure that you have a recent version of Node installed (https://nodejs.org/en)
+### ensure that you have a recent version of Node installed (https://nodejs.org/en)
 
-$ Clone Repo
-$ Open the folder in your Terminal
-$ Run yarn install || yarn i
-$ After installation completes, run "yarn start"
+- Clone Repo
+- Open the folder in your Terminal
+- Run yarn install || yarn i
+- After installation completes, run "yarn start"
 
 ### `yarn start`
 
